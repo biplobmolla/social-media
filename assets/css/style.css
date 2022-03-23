@@ -133,9 +133,9 @@ nav ul li a:hover {
 /* Posts */
 
 .post {
+  position: relative;
   width: 40%;
-  padding: 1.5em;
-  margin: auto;
+  margin: 0 auto 40px auto;
   background-color: #fff;
   border: 0;
   border-radius: 10px;
@@ -145,6 +145,7 @@ nav ul li a:hover {
 .post-info {
   display: flex;
   justify-content: space-between;
+  padding: 1.5em 1.5em 0 1.5em;
 }
 
 .post-info i {
@@ -158,7 +159,8 @@ nav ul li a:hover {
   border-radius: 50%;
 }
 
-.post-info i:hover {
+.post-info i:hover,
+.post-info i.active {
   background-color: rgba(128, 128, 128, 0.3);
 }
 
@@ -172,7 +174,159 @@ nav ul li a:hover {
 }
 
 .profile-info-text .time {
-  font-size: 14px;
+  font-size: 0.9em;
   font-weight: 700;
   color: grey;
+}
+
+.post-text {
+  font-size: 0.95em;
+  padding: 0 1.5em;
+  margin: 15px 0;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.post-description img {
+  width: 100%;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5em 0;
+}
+
+.post-actions i {
+  font-size: 1.2em;
+  padding: 0.4em 3em;
+  margin: 0 0.2em;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.post-actions i span {
+  font-size: 16px;
+  color: grey;
+  margin-left: 0.5em;
+}
+
+.post-actions i:hover,
+.post-actions i.active {
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+/* Comment Area */
+
+.comment-area {
+  padding: 1em;
+  display: none;
+}
+
+.comment-area.active {
+  display: block;
+}
+
+.comment-area .input {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.comment-area .input input {
+  width: 100%;
+  padding: 0.5em 0 0.5em 1em;
+  border: 0;
+  outline: none;
+}
+
+.comment-area .input i {
+  margin-right: 5px;
+  padding: 0.5em;
+  border: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.comment-area .input i:hover {
+  background-color: rgba(128, 128, 128, 0.3);
+  cursor: pointer;
+}
+
+.comment .profile-info-top {
+  display: flex;
+  align-items: center;
+}
+
+.comment .profile-info-text .time {
+  margin-left: 5px;
+}
+
+.post-text,
+.comment-text {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: rgb(66, 64, 64);
+  line-height: 20px;
+}
+
+.comment .profile-info-text {
+  max-width: 80%;
+}
+
+.comment {
+  margin: 15px 0;
+}
+
+/* Options */
+
+.options {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  padding: 0.3em;
+  background-color: #ccc;
+  z-index: 999;
+  border: 0;
+  border-radius: 4px;
+  display: none;
+}
+
+.options.active {
+  display: block;
+}
+
+.options::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 65%;
+  z-index: -1;
+  transform: translateY(-50%) rotateZ(45deg);
+  background-color: #ccc;
+}
+
+.options a {
+  font-size: 16px;
+  width: 100%;
+  padding: 0.2em 1em;
+  font-weight: 600;
+  border: 0;
+  border-radius: 6px;
+  margin: 0.1em 0;
+}
+
+.options a:hover {
+  background-color: grey;
 }
